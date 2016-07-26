@@ -38,7 +38,7 @@
             vm.search = false;
             CandidateService.GetAll()
                 .then(function (response) {
-                    vm.toCallCandidates = response.candidates;
+                    vm.toCallCandidates = response.root.workers;
                     console.log(vm.toCallCandidates[1].name);
                 });
 

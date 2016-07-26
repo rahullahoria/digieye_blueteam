@@ -7,7 +7,7 @@
         - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
     </li>
 </ul> -->
-<div class="row">
+<!--<div class="row">
     <div class="col-md-3 pull-left">
         <button class="btn btn-calm" ng-click="vm.loadToCallCandidates()">Get Candidate to verify</button>
     </div>
@@ -70,9 +70,9 @@
         </form>
     </div>
 
-</div>
+</div>-->
 <div class="row">
-    <div class="col-md-6 ">
+   <!-- <div class="col-md-6 ">
         <h2>Register</h2>
         <form name="form" ng-submit="vm.registerWorker()" role="form">
             <div class="row">
@@ -182,18 +182,23 @@
 
             </div>
         </form>
-    </div>
+    </div>-->
 
-    <div class="col-md-6 pull-right">
+    <div class="col-md-12 pull-right">
 
 
         <table datatable="ng"  class="row-border hover">
             <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Mobile</th>
-                <th>Updated</th>
+                <th>Name (Mobile)</th>
+
+                <th>Emergency no.</th>
+                <th>Lord Name (Mobile)</th>
+
+                <th>Lord Address</th>
+                <th>Status</th>
+                <th>Documents</th>
             </tr>
             </thead>
             <tbody>
@@ -201,11 +206,19 @@
             <tr ng-repeat="toCallCandidate in vm.toCallCandidates">
 
                 <td>{{ toCallCandidate.id }}</td>
-                <td>{{ toCallCandidate.name }}</td>
+                <td>{{ toCallCandidate.name }} ({{ toCallCandidate.mobile }})</td>
+                <td>{{ toCallCandidate.emergency_no }}</td>
+                <td>{{ toCallCandidate.lord_name }} ({{ toCallCandidate.lord_mobile }})</td>
+
+                <td>{{ toCallCandidate.lord_address }}</td>
+                <td>{{ toCallCandidate.status }}</td>
                 <td>
-                    <button ng-click="vm.loadMobile( $index  )">{{ toCallCandidate.mobile }}</button>
+                    <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.adhar_card }}" ng-show="toCallCandidate.adhar_card">AC</a>
+                    <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.voter_id }}" ng-show="toCallCandidate.voter_id">VC</a>
+                    <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.driving_license }}" ng-show="toCallCandidate.driving_license">DL</a>
+                    <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.pan_card }}" ng-show="toCallCandidate.pan_card">PC</a>
+
                 </td>
-                <td>{{ toCallCandidate.last_updated }}</td>
             </tr>
 
             </tbody>
