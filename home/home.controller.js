@@ -5,38 +5,41 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['UserService',  'CandidateService','$rootScope', 'FlashService'];
+    HomeController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService'];
     function HomeController(UserService, CandidateService,  $rootScope, FlashService) {
         var vm = this;
 
         vm.user = null;
+        vm.inUser = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
+        vm.loadUser = loadUser;
 
         initController();
 
         function initController() {
           //  loadCurrentUser();
            // loadAllUsers();
+
+            loadUser();
             loadToCallCandidates();
-            loadProfessions();
+
+        }
+
+        function loadUser(){
+            vm.inUser = UserService.GetInUser();
+            console.log("in user",vm.inUser);
+
+
         }
 
         vm.loadToCallCandidates = loadToCallCandidates;
 
-        function loadProfessions(){
-            vm.search = false;
-            CandidateService.GetAllProfession()
-                .then(function (response) {
-                    vm.professions = response.professions;
-                    console.log(vm.professions.name);
-                });
 
-        }
 
         function loadToCallCandidates(){
             vm.search = false;
-            CandidateService.GetAll()
+            CandidateService.GetAll(vm.inUser.society_id)
                 .then(function (response) {
                     vm.toCallCandidates = response.root.workers;
                     console.log(vm.toCallCandidates[1].name);

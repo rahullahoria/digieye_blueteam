@@ -71,6 +71,19 @@
     </div>
 
 </div>-->
+<div class="row" style="background-color: #ffffff">
+
+    <div CLASS="col-md-3 PULL-LEFT">
+        <img src="http://api.file-dog.shatkonlabs.com/files/rahul/{{vm.inUser.society.logo_id}}" height="50"/>
+    </div>
+    <div CLASS="col-md-6">
+    {{ vm.inUser.name}}
+        </div>
+    <div CLASS="col-md-3">
+        <button class="btn btn-mini btn-danger pull-right"><i class="icon glyphicon glyphicon-off"></i> </button>
+    </div>
+
+</div>
 <div class="row">
    <!-- <div class="col-md-6 ">
         <h2>Register</h2>
@@ -191,12 +204,13 @@
             <thead>
             <tr>
                 <th>ID</th>
+                <th>Resident Name (Mobile)</th>
+
+                <th>Resident Address</th>
                 <th>Name (Mobile)</th>
 
                 <th>Emergency no.</th>
-                <th>Lord Name (Mobile)</th>
 
-                <th>Lord Address</th>
                 <th>Status</th>
                 <th>Documents</th>
             </tr>
@@ -206,11 +220,12 @@
             <tr ng-repeat="toCallCandidate in vm.toCallCandidates">
 
                 <td>{{ toCallCandidate.id }}</td>
-                <td>{{ toCallCandidate.name }} ({{ toCallCandidate.mobile }})</td>
-                <td>{{ toCallCandidate.emergency_no }}</td>
                 <td>{{ toCallCandidate.lord_name }} ({{ toCallCandidate.lord_mobile }})</td>
 
                 <td>{{ toCallCandidate.lord_address }}</td>
+                <td>{{ toCallCandidate.name }} ({{ toCallCandidate.mobile }})</td>
+                <td>{{ toCallCandidate.emergency_no }}</td>
+
                 <td>{{ toCallCandidate.status }}</td>
                 <td>
                     <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.adhar_card }}" ng-show="toCallCandidate.adhar_card">AC</a>

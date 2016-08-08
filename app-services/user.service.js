@@ -5,18 +5,27 @@
         .module('app')
         .factory('UserService', UserService);
 
-    UserService.$inject = ['$http'];
-    function UserService($http) {
+    UserService.$inject = ['$http', '$cookieStore'];
+    function UserService($http, $cookieStore) {
         var service = {};
 
         service.Auth = Auth;
 
-        return service;
 
 
+
+
+        service.GetInUser = function(){
+
+            return JSON.parse($cookieStore.get('inUser'));
+
+        }
 
         function Auth(user) {
-            return $http.post('http://api.shatkonjobs.com/auth', user).then(handleSuccess, handleError('Error creating user'));
+            var root = {};
+            root['root'] = user;
+            console.log(root);
+            return $http.post('https://blueteam.in/api/login/society', root).then(handleSuccess, handleError('Error creating user'));
         }
 
         // private functions
@@ -30,6 +39,7 @@
                 return { success: false, message: error };
             };
         }
+        return service;
     }
 
 })();

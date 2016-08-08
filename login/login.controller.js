@@ -19,6 +19,7 @@
         function login() {
             vm.dataLoading = true;
             AuthenticationService.Login(vm.user, function (resp) {
+                console.log("resp",resp);
                 if (resp.success) {
                     AuthenticationService.SetCredentials(vm.user.username, vm.user.password);
                     $location.path('/home');

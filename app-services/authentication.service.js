@@ -5,7 +5,7 @@
         .module('app')
         .factory('AuthenticationService', AuthenticationService);
 
-    AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
+    AuthenticationService.$inject = ['$http', '$cookieStore','$rootScope', '$timeout', 'UserService'];
     function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService) {
         var service = {};
 
@@ -25,8 +25,9 @@
                     .then(function (response) {
                         console.log(response);
                         var resp = null;
-                        if (response.auth == true || response.auth == "true") {
+                        if (response.root.user.who) {
                             resp = { success: true };
+                            $cookieStore.put('inUser', JSON.stringify(response.root.user));
                         } else {
                             resp = { success: false, message: 'Username or password is incorrect' };
                         }

@@ -24,9 +24,9 @@
 
         return service;
 
-        function GetAll() {
+        function GetAll(society_id) {
             return $http
-                        .get('http://api.bluenet.blueteam.in/workers/society?society_id=1')
+                        .get('http://api.bluenet.blueteam.in/workers/society?society_id='+society_id)
                         .then(handleSuccess, handleError('Error getting all users'));
         }
 
