@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9554012-6b8f-4363-a3d7-063d51bc7a8e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/home.controller.js" afterPath="$PROJECT_DIR$/home/home.controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/home/home.view.html" afterPath="$PROJECT_DIR$/home/home.view.html" />
     </list>
     <ignored path="digieye_blueteam.iws" />
@@ -100,8 +101,8 @@
       <file leaf-file-name="home.view.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/home.view.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69283277">
-              <caret line="215" column="150" selection-start-line="215" selection-start-column="150" selection-end-line="215" selection-end-column="150" />
+            <state vertical-scroll-proportion="0.79522187">
+              <caret line="146" column="57" selection-start-line="146" selection-start-column="57" selection-end-line="146" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -121,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/home/home.controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="94" selection-start-line="8" selection-start-column="94" selection-end-line="8" selection-end-column="94" />
+              <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -375,7 +376,13 @@
       <option name="project" value="LOCAL" />
       <updated>1471426295339</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="pull">
+      <created>1471426408598</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1471426408598</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -806,6 +813,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/home/home.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="8" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/login/login.view.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.25">
@@ -816,18 +831,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/home.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="94" selection-start-line="8" selection-start-column="94" selection-end-line="8" selection-end-column="94" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/home.view.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69283277">
-          <caret line="215" column="150" selection-start-line="215" selection-start-column="150" selection-end-line="215" selection-end-column="150" />
+        <state vertical-scroll-proportion="0.79522187">
+          <caret line="146" column="57" selection-start-line="146" selection-start-column="57" selection-end-line="146" selection-end-column="57" />
           <folding />
         </state>
       </provider>

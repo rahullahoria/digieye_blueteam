@@ -15,6 +15,16 @@
         vm.deleteUser = deleteUser;
         vm.loadUser = loadUser;
 
+        vm.recruited = 0;
+        vm.in_queue = 0;
+        vm.new = 0;
+        vm.rejected = 0;
+
+        vm.recruitedFilter = true;
+        vm.in_queueFilter = true;
+        vm.newFilter = true;
+        vm.rejectedFilter = true;
+
         initController();
 
         function initController() {
@@ -41,12 +51,56 @@
             $location.path('#/login');
         };
 
+
+        vm.filterIt = function(status){
+
+            if(status == "recruited")  {
+
+              vm.recruitedFilter = true;
+              vm.in_queueFilter = false;
+              vm.newFilter = false;
+              vm.rejectedFilter = false;
+
+            }
+            if(status == "in-queue")  {
+
+                vm.recruitedFilter = false;
+                vm.inqueueFilter = true;
+                vm.newFilter = false;
+                vm.rejectedFilter = false;
+
+            }
+            if(status == "new")  {
+
+                vm.recruitedFilter = false;
+                vm.in_queueFilter = false;
+                vm.newFilter = true;
+                vm.rejectedFilter = false;
+
+            }
+            if(status == "rejected")  {
+
+                vm.recruitedFilter = false;
+                vm.in_queueFilter = false;
+                vm.newFilter = false;
+                vm.rejectedFilter = true;
+
+            }
+
+        };
+
         function loadToCallCandidates(){
             vm.search = false;
             CandidateService.GetAll(vm.inUser.society_id)
                 .then(function (response) {
                     vm.toCallCandidates = response.root.workers;
                     console.log(vm.toCallCandidates[1].name);
+                    for(var i=0;i < vm.toCallCandidates.length ; i++){
+                        vm.recruited += (vm.toCallCandidates[i].status == "recruited")?1:0;
+                        vm.in_queue += (vm.toCallCandidates[i].status == "in-queue")?1:0;
+                        vm.new += (vm.toCallCandidates[i].status == "new")?1:0;
+                        vm.rejected += (vm.toCallCandidates[i].status == "rejected")?1:0;
+                    }
                 });
 
         }
@@ -89,6 +143,7 @@
 
         }
 
+
         vm.searchWorker = function () {
             console.log("searching Worker function");
             vm.dataLoading = true;
@@ -100,6 +155,7 @@
                             vm.dataLoading = false;
                             vm.user = null;
                             vm.toCallCandidates = response.candidates;
+
                         } else {
                             FlashService.Error(response.error.text);
                             vm.dataLoading = false;
