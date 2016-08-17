@@ -20,7 +20,7 @@
             <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings </a>
             </li>
             <li class="divider"></li>
-            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+            <li><a ng-click="vm.logout()"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
             </li>
 
 
@@ -186,7 +186,7 @@
 
                             <table datatable="ng"  class="table table-bordered table-hover table-striped">
                                 <thead>
-                                <tr>
+                                <tr >
                                     <th>ID</th>
                                     <th>Resident Name (Mobile)</th>
 
@@ -202,7 +202,7 @@
                                 </thead>
                                 <tbody>
 
-                                <tr ng-repeat="toCallCandidate in vm.toCallCandidates">
+                                <tr ng-repeat="toCallCandidate in vm.toCallCandidates" ng-show="toCallCandidate.id">
 
                                     <td>{{ toCallCandidate.local_id }}(DE-{{ toCallCandidate.id }})</td>
                                     <td>{{ toCallCandidate.lord_name }} ({{ toCallCandidate.lord_mobile }})</td>

@@ -5,8 +5,8 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService'];
-    function HomeController(UserService, CandidateService,  $rootScope, FlashService) {
+    HomeController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService','$location'];
+    function HomeController(UserService, CandidateService,  $rootScope, FlashService,$location) {
         var vm = this;
 
         vm.user = null;
@@ -36,6 +36,10 @@
         vm.loadToCallCandidates = loadToCallCandidates;
 
 
+        vm.logout = function(){
+            vm.inUser = null;
+            $location.path('#/login');
+        };
 
         function loadToCallCandidates(){
             vm.search = false;
