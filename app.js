@@ -10,8 +10,8 @@
     function config($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
-                controller: 'IndexController',
-                templateUrl: 'index/index.view.html',
+                controller: 'LoginController',
+                templateUrl: 'login/login.view.html',
                 controllerAs: 'vm'
                 
             })
@@ -42,7 +42,7 @@
 
             })
 
-            .otherwise({ redirectTo: '/' });
+            .otherwise({ redirectTo: '/login' });
     }
 
     run.$inject = ['$rootScope', '$location', '$cookieStore', '$http'];

@@ -2,45 +2,93 @@
 <html ng-app="app">
 <head>
     <meta charset="utf-8" />
-    <!-- <title>AngularJS User Registration and Login Example</title> -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" />
+    <title>DigiEyeTech.com with BlueTeam.in</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- MetisMenu CSS -->
+    <link href="./bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Timeline CSS -->
+    <link href="./dist/css/timeline.css" rel="stylesheet">
+
+
+
+    <!-- Morris Charts CSS -->
+    <link href="./bower_components/morrisjs/morris.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="./dist/css/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="./bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
     <link href="app-content/app.css" rel="stylesheet" />
 </head>
 <body>
 
-    <div class="jumbotron" style="padding-top: 0px;">
-        <div class="container">
-            <div class="col-sm-8 col-sm-offset-2">
-                <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+<div class="container">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
 
-            </div>
-            <div ng-view></div>
-        </div>
     </div>
-    <!-- <div class="credits text-center">
-        <p>
-            <a href="http://jasonwatmore.com/post/2015/03/10/AngularJS-User-Registration-and-Login-Example.aspx">AngularJS User Registration and Login Example</a>
-        </p>
-        <p>
-            <a href="http://jasonwatmore.com">JasonWatmore.com</a>
-        </p>
-    </div> -->
 
-    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+</div>
+<div ng-view></div>
 
 
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
-    <script src="//code.angularjs.org/1.2.20/angular.js"></script>
-    <script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
-    <script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>
+
+<!--    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script> -->
+
+<!-- jQuery -->
+<script src="./bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="./bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
 
 
 
-    <script src="angular-datatables.min.js"></script>
-    <link rel="stylesheet" href="angular-datatables.css">
+
+<!-- Morris Charts JavaScript -->
+<!--<script src="./bower_components/raphael/raphael-min.js"></script>
+<script src="./bower_components/morrisjs/morris.min.js"></script>
+<script src="./js/morris-data.js"></script>-->
+
+<!-- Custom Theme JavaScript -->
+<script src="./dist/js/sb-admin-2.js"></script>
+
+
+
+
+<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.css">
+
+
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.js"></script>
+<script src="//code.angularjs.org/1.2.20/angular.js"></script>
+<script src="//code.angularjs.org/1.2.20/angular-route.js"></script>
+<script src="//code.angularjs.org/1.2.13/angular-cookies.js"></script>-->
+
+<link rel="stylesheet" type="text/css" href="./bower_components/datatables/media/css/jquery.dataTables.css">
+
+
+<script type="text/javascript" charset="utf8" src="./bower_components/datatables/media/js/jquery.dataTables.js"></script>
+
+<script src="./js/angular.js"></script>
+
+<script src="./js/angular-route.js"></script>
+<script src="./js/angular-cookies.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.bundle.min.js"></script>
+
+
+
+
+<script src="angular-datatables.min.js"></script>
+<link rel="stylesheet" href="angular-datatables.css">
 
     <script src="app.js"></script>
     <script src="app-services/authentication.service.js"></script>
