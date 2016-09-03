@@ -205,47 +205,58 @@
                                 <fieldset>
 
                                     <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                        <input class="form-control" placeholder="Resident name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">Resident name is required</span>
                                     </div>
 
                                     <div class="form-group" ng-class="{ 'has-error': form.resident_mobile.$dirty && form.resident_mobile.$error.required }">
-                                        <input class="form-control" placeholder="resident_mobile" type="text" name="resident_mobile" id="resident_mobile" ng-model="vm.worker.resident_mobile" required >
-                                        <span ng-show="form.resident_mobile.$dirty && form.resident_mobile.$error.required" class="help-block">resident_mobile is required</span>
+                                        <input class="form-control" placeholder="Resident mobile" type="number" name="resident_mobile" id="resident_mobile" ng-model="vm.worker.resident_mobile" required >
+                                        <span ng-show="form.resident_mobile.$dirty && form.resident_mobile.$error.required" class="help-block">Resident mobile is required</span>
                                     </div>
 
                                     <div class="form-group" ng-class="{ 'has-error': form.resident_address.$dirty && form.resident_address.$error.required }">
-                                        <input class="form-control" placeholder="resident_address" type="text" name="resident_address" id="resident_address" ng-model="vm.worker.resident_address" required >
-                                        <span ng-show="form.resident_address.$dirty && form.resident_address.$error.required" class="help-block">resident_address is required</span>
+                                        <input class="form-control" placeholder="Resident address" type="text" name="resident_address" id="resident_address" ng-model="vm.worker.resident_address" required >
+                                        <span ng-show="form.resident_address.$dirty && form.resident_address.$error.required" class="help-block">Resident address is required</span>
                                     </div>
 
-                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_name.$dirty && form.worker_name.$error.required }">
+                                        <input class="form-control" placeholder="Worker name" type="text" name="worker_name" id="worker_name" ng-model="vm.worker.worker_name" required >
+                                        <span ng-show="form.worker_name.$dirty && form.worker_name.$error.required" class="help-block">Worker name is required</span>
                                     </div>
 
-                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_mobile.$dirty && form.worker_mobile.$error.required }">
+                                        <input class="form-control" placeholder="Worker mobile" type="number" name="worker_mobile" id="worker_mobile" ng-model="vm.worker.worker_mobile" required >
+                                        <span ng-show="form.worker_mobile.$dirty && form.worker_mobile.$error.required" class="help-block">Worker mobile is required</span>
                                     </div>
 
-                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_address.$dirty && form.worker_address.$error.required }">
+                                        <input class="form-control" placeholder="Worker address" type="text" name="worker_address" id="worker_address" ng-model="vm.worker.worker_address" required >
+                                        <span ng-show="form.worker_address.$dirty && form.worker_address.$error.required" class="help-block">Worker address is required</span>
                                     </div>
 
-                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_localId.$dirty && form.worker_localId.$error.required }">
+                                        <input class="form-control" placeholder="Worker society Id number" type="number" name="worker_localId" id="worker_localId" ng-model="vm.worker.worker_localId" required >
+                                        <span ng-show="form.worker_localId.$dirty && form.worker_localId.$error.required" class="help-block">Worker society Id number is required</span>
                                     </div>
 
-                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
-                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
-                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_service.$dirty && form.worker_service.$error.required }">
+                                        <input class="form-control" placeholder="Worker service" type="text" name="worker_service" id="worker_service" ng-model="vm.worker.worker_service" required >
+                                        <span ng-show="form.worker_service.$dirty && form.worker_service.$error.required" class="help-block">Worker service is required</span>
                                     </div>
-
-                                    <div class="form-actions">
-                                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-lg btn-success btn-block">Login</button>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_emergency_no.$dirty && form.worker_emergency_no.$error.required }">
+                                        <input class="form-control" placeholder="Worker emergency contact number" type="number" name="worker_emergency_no" id="worker_emergency_no" ng-model="vm.worker.worker_emergency_no" required >
+                                        <span ng-show="form.worker_emergency_no.$dirty && form.worker_emergency_no.$error.required" class="help-block">Worker emergency contact number is required</span>
+                                    </div>
+                                    <div class="form-group" ng-class="{ 'has-error': form.worker_native_add.$dirty && form.worker_native_add.$error.required }">
+                                        <input class="form-control" placeholder="Worker native address" type="text" name="worker_native_add" id="worker_native_add" ng-model="vm.worker.worker_native_add" required >
+                                        <span ng-show="form.worker_native_add.$dirty && form.worker_native_add.$error.required" class="help-block">Worker native address is required</span>
+                                    </div>
+                                    <!-- <div class="form-group" ng-class="{ 'has-error': form.worker_photo.$dirty && form.worker_photo.$error.required }">
+                                        <input class="form-control" placeholder="Worker Photo" type="file" name="worker_photo" id="worker_photo" ng-model="vm.worker.worker_photo" required >
+                                        <span ng-show="form.worker_photo.$dirty && form.worker_photo.$error.required" class="help-block">Worker photo is required</span>
+                                    </div> -->
+                                    <div>
+                                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-lg btn-success btn-block">Add Worker</button>
                                         <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
 
                                     </div>
