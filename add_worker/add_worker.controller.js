@@ -172,6 +172,25 @@
 
         }
 
+        vm.doUpload = function (file) {
+            upload({
+                url: 'http://api.file-dog.shatkonlabs.com/files/rahul',
+                method: 'POST',
+                data: {
+                    anint: 123,
+                    aBlob: Blob([1,2,3]), // Only works in newer browsers
+                    aFile: file, // a jqLite type="file" element, upload() will extract all the files from the input and put them into the FormData object before sending.
+                }
+            }).then(
+                function (response) {
+                    console.log(response.data); // will output whatever you choose to return from the server on a successful upload
+                },
+                function (response) {
+                    console.error(response); //  Will return if status code is above 200 and lower than 300, same as $http
+                }
+            );
+        }
+
         vm.registerWorker = function registerWorker() {
             console.log("registerWorker function",vm.inUser.society_id);
             vm.dataLoading = true;
