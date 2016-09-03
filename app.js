@@ -35,6 +35,13 @@
                 
             })
 
+            .when('/add_worker', {
+                controller: 'AddWorkerController',
+                templateUrl: 'add_worker/add_worker.view.html',
+                controllerAs: 'vm'
+
+            })
+
             .when('/home/:mobile', {
                 controller: 'HomeController',
                 templateUrl: 'home/home.view.html',

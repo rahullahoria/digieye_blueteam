@@ -38,7 +38,7 @@
                     </li>
 
                     <li>
-                        <a href="#/add_worker"><i class="fa fa-table fa-fw"></i> Add Worker</a>
+                        <a href="#/worker"><i class="fa fa-table fa-fw"></i> Add Worker</a>
                     </li>
 
                     <li>
@@ -183,50 +183,77 @@
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
-                        <div class="table-responsive">
+                        <div class="col-lg-6">
+                            resident_name
+                            resident_mobile
+                            resident_address
+                            worker_name
+                            worker_mobile
+                            worker_address
+                            worker_photo
+                            worker_localId
+                            worker_service
+                            worker_pv
+                            worker_ac
+                            worker_vc
+                            worker_dl
+                            worker_pc
+                            worker_emergency_no
+                            worker_native_add
 
-                            <table datatable="ng"  class="table table-bordered table-hover table-striped">
-                                <thead>
-                                <tr >
-                                    <th>ID</th>
-                                    <th>Resident Name (Mobile)</th>
+                            <form role="form" ng-submit="vm.registerWorker()" role="form">
+                                <fieldset>
 
-                                    <th>Resident Address</th>
-                                    <th>Name (Mobile)</th>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                    <th>Emergency no.</th>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_mobile.$dirty && form.resident_mobile.$error.required }">
+                                        <input class="form-control" placeholder="resident_mobile" type="text" name="resident_mobile" id="resident_mobile" ng-model="vm.worker.resident_mobile" required >
+                                        <span ng-show="form.resident_mobile.$dirty && form.resident_mobile.$error.required" class="help-block">resident_mobile is required</span>
+                                    </div>
 
-                                    <th>Status</th>
-                                    <th>Documents</th>
-                                    <th>X</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_address.$dirty && form.resident_address.$error.required }">
+                                        <input class="form-control" placeholder="resident_address" type="text" name="resident_address" id="resident_address" ng-model="vm.worker.resident_address" required >
+                                        <span ng-show="form.resident_address.$dirty && form.resident_address.$error.required" class="help-block">resident_address is required</span>
+                                    </div>
 
-                                <tr ng-repeat="toCallCandidate in vm.toCallCandidates" ng-show="toCallCandidate.id&&vm.{{ toCallCandidate.status }}Filter" >
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                    <td>{{ toCallCandidate.local_id }}(DE-{{ toCallCandidate.id }})</td>
-                                    <td>{{ toCallCandidate.lord_name }} ({{ toCallCandidate.lord_mobile }})</td>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                    <td>{{ toCallCandidate.lord_address }}</td>
-                                    <td>{{ toCallCandidate.name }} ({{ toCallCandidate.mobile }})</td>
-                                    <td>{{ toCallCandidate.emergency_no }}</td>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                    <td>{{ toCallCandidate.status }}</td>
-                                    <td>
-                                        <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.pv }}" ng-show="toCallCandidate.pv">PV</a>
-                                        <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.adhar_card }}" ng-show="toCallCandidate.adhar_card">AC</a>
-                                        <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.voter_id }}" ng-show="toCallCandidate.voter_id">VC</a>
-                                        <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.driving_license }}" ng-show="toCallCandidate.driving_license">DL</a>
-                                        <a href="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.pan_card }}" ng-show="toCallCandidate.pan_card">PC</a>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                    </td>
-                                    <td>X</td>
-                                </tr>
+                                    <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
+                                        <input class="form-control" placeholder="resident_name" type="text" name="resident_name" id="resident_name" ng-model="vm.worker.resident_name" required >
+                                        <span ng-show="form.resident_name.$dirty && form.resident_name.$error.required" class="help-block">resident_name is required</span>
+                                    </div>
 
-                                </tbody>
-                            </table>
+                                    <div class="form-actions">
+                                        <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-lg btn-success btn-block">Login</button>
+                                        <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+                                    </div>
+
+                                </fieldset>
+                            </form>
                         </div>
+
                     </div>
                     <!-- /.panel-body -->
                 </div>

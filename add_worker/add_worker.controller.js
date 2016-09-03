@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
+        .controller('AddWorkerController', AddWorkerController);
 
-    HomeController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService','$location'];
-    function HomeController(UserService, CandidateService,  $rootScope, FlashService,$location) {
+    AddWorkerController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService','$location'];
+    function AddWorkerController(UserService, CandidateService,  $rootScope, FlashService,$location) {
         var vm = this;
 
         vm.user = null;
@@ -173,39 +173,24 @@
         }
 
         vm.registerWorker = function registerWorker() {
-            console.log("registerWorker function");
+            console.log("registerWorker function",vm.inUser.society_id);
             vm.dataLoading = true;
-            if(!vm.user.id){
-            CandidateService.Create(vm.user)
+
+            CandidateService.Create(vm.worker, vm.inUser.society_id)
                 .then(function (response) {
                     console.log("safa",response);
-                    if (response.candidate) {
+                    if (response.root.worker_id) {
                         FlashService.Success('Registration successful', true);
                         vm.dataLoading = false;
                         vm.user = null;
                         loadToCallCandidates();
                         //$location.path('/login');
                     } else {
-                        FlashService.Error(response.error.text);
+                        FlashService.Error("Failed to insert");
                         vm.dataLoading = false;
                     }
                 });
-            } else {
-                CandidateService.Update(vm.user)
-                    .then(function (response) {
-                        console.log("safa",response);
-                        if (response.status) {
-                            FlashService.Success('Updated successful', true);
-                            vm.dataLoading = false;
-                            vm.user = null;
-                            loadToCallCandidates();
-                            //$location.path('/login');
-                        } else {
-                            FlashService.Error(response.error.text);
-                            vm.dataLoading = false;
-                        }
-                    });
-            }
+
         }
     }
 
