@@ -5,11 +5,12 @@
         .module('app')
         .controller('AddWorkerController', AddWorkerController);
 
-    AddWorkerController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService','$location'];
-    function AddWorkerController(UserService, CandidateService,  $rootScope, FlashService,$location) {
+    AddWorkerController.$inject = ['UserService',  'CandidateService', '$rootScope', 'FlashService','$location','upload','$timeout'];
+    function AddWorkerController(UserService, CandidateService,  $rootScope, FlashService,$location,upload,$timeout) {
         var vm = this;
 
         vm.user = null;
+        vm.worker = null;
         vm.inUser = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
@@ -172,26 +173,70 @@
 
         }
 
-        vm.doUpload = function (file) {
-            upload({
-                url: 'http://api.file-dog.shatkonlabs.com/files/rahul',
-                method: 'POST',
-                data: {
-                    anint: 123,
-                    aBlob: Blob([1,2,3]), // Only works in newer browsers
-                    aFile: file, // a jqLite type="file" element, upload() will extract all the files from the input and put them into the FormData object before sending.
-                }
-            }).then(
-                function (response) {
-                    console.log(response.data); // will output whatever you choose to return from the server on a successful upload
-                },
-                function (response) {
-                    console.error(response); //  Will return if status code is above 200 and lower than 300, same as $http
-                }
-            );
-        }
+        vm.doUpload = function (file_id) {
+            if(document.getElementById(file_id).files[0])
+                upload({
+                    url: 'http://api.file-dog.shatkonlabs.com/files/rahul',
+                    method: 'POST',
+                    data: {
+                        anint: 123,
+                        fileToUpload: document.getElementById(file_id).files[0], // a jqLite type="file" element, upload() will extract all the files from the input and put them into the FormData object before sending.
+                    }
+                }).then(
+                    function (response) {
+                        vm.filesUpStatus[file_id] = true;
+                        console.log(response.data);
+                        vm.worker["worker_"+file_id] = response.data.file.id;
+                        console.log(vm.worker);
+                    },
+                    function (response) {
+                        console.error(response); //  Will return if status code is above 200 and lower than 300, same as $http
+                    }
+                );
+            else vm.filesUpStatus[file_id] = true;
+        };
 
+        vm.filesUpStatus = new Array();
+        vm.filesUpStatus["vc"] = false;
+        vm.filesUpStatus["ac"] = false;
+        vm.filesUpStatus["pc"] = false;
+        vm.filesUpStatus["photo"] = false;
+        vm.filesUpStatus["dl"] = false;
+        vm.filesUpStatus["pv"] = false;
+
+
+        vm.flag = true;
         vm.registerWorker = function registerWorker() {
+
+            if(vm.flag) {
+                vm.doUpload('vc');
+                vm.doUpload('ac');
+                vm.doUpload('pc');
+                vm.doUpload('photo');
+                vm.doUpload('dl');
+                vm.doUpload('pv');
+            }
+            //while (true){
+
+                if(
+                    vm.filesUpStatus["vc"] &&
+                    vm.filesUpStatus["ac"] &&
+                    vm.filesUpStatus["pc"] &&
+                    vm.filesUpStatus["photo"] &&
+                    vm.filesUpStatus["dl"] &&
+                    vm.filesUpStatus["pv"]
+
+                ) vm.flag = true;
+                else {
+
+                    vm.flag = false;
+                    $timeout(function () {
+                        vm.registerWorker();
+                    }, 3000);
+                    return;
+                }
+            //}
+
             console.log("registerWorker function",vm.inUser.society_id);
             vm.dataLoading = true;
 
@@ -202,7 +247,7 @@
                         FlashService.Success('Registration successful', true);
                         vm.dataLoading = false;
                         vm.user = null;
-                        loadToCallCandidates();
+                        //loadToCallCandidates();
                         //$location.path('/login');
                     } else {
                         FlashService.Error("Failed to insert");

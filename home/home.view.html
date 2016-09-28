@@ -34,15 +34,15 @@
                 <ul class="nav" id="side-menu">
 
                     <li >
-                        <a href="#/manager" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="#/home" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
 
                     <li>
-                        <a href="#/add_worker"><i class="fa fa-table fa-fw"></i> Add Worker</a>
+                        <a href="#/worker"><i class="fa fa-table fa-fw"></i> Add Worker</a>
                     </li>
 
                     <li>
-                        <a href="tables.html"><i class="glyphicon glyphicon-cog fa-fw"></i> Settings</a>
+                        <a href="#/home" ><i class="glyphicon glyphicon-cog fa-fw"></i> Settings</a>
                     </li>
                     <li>
                         <a ng-click="vm.logout()"><i class="glyphicon glyphicon-off fa-fw"></i> Logout</a>
@@ -161,7 +161,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-bar-chart-o fa-fw"></i> Residents and Workers
-                        <div class="pull-right">
+                        <!--<div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                     Actions
@@ -179,7 +179,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -192,7 +192,8 @@
                                     <th>Resident Name (Mobile)</th>
 
                                     <th>Resident Address</th>
-                                    <th>Name (Mobile)</th>
+                                    <th>Worker Photo</th>
+                                    <th>Worker Name (Mobile)</th>
 
                                     <th>Emergency no.</th>
 
@@ -209,6 +210,13 @@
                                     <td>{{ toCallCandidate.lord_name }} ({{ toCallCandidate.lord_mobile }})</td>
 
                                     <td>{{ toCallCandidate.lord_address }}</td>
+                                    <td>
+                                        <div class="thumbnail">
+                                            <div class="image">
+                                                <img src="http://api.file-dog.shatkonlabs.com/files/rahul/{{ toCallCandidate.photo }}" style="max-height: 100%" alt="No Image"/>
+                                            </div>
+                                        </div>
+                                    </td>
                                     <td>{{ toCallCandidate.name }} ({{ toCallCandidate.mobile }})</td>
                                     <td>{{ toCallCandidate.emergency_no }}</td>
 

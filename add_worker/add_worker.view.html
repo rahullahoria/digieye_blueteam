@@ -34,7 +34,7 @@
                 <ul class="nav" id="side-menu">
 
                     <li >
-                        <a href="#/manager" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <a href="#/home" class="active"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                     </li>
 
                     <li>
@@ -42,7 +42,7 @@
                     </li>
 
                     <li>
-                        <a href="tables.html"><i class="glyphicon glyphicon-cog fa-fw"></i> Settings</a>
+                        <a href="#/home" ><i class="glyphicon glyphicon-cog fa-fw"></i> Settings</a>
                     </li>
                     <li>
                         <a ng-click="vm.logout()"><i class="glyphicon glyphicon-off fa-fw"></i> Logout</a>
@@ -161,7 +161,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <i class="fa fa-bar-chart-o fa-fw"></i> Residents and Workers
-                        <div class="pull-right">
+                        <!--<div class="pull-right">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
                                     Actions
@@ -179,29 +179,16 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
+                        <form role="form" ng-submit="vm.registerWorker()" role="form">
                         <div class="col-lg-6">
-                            resident_name
-                            resident_mobile
-                            resident_address
-                            worker_name
-                            worker_mobile
-                            worker_address
-                            worker_photo
-                            worker_localId
-                            worker_service
-                            worker_pv
-                            worker_ac
-                            worker_vc
-                            worker_dl
-                            worker_pc
-                            worker_emergency_no
-                            worker_native_add
 
-                            <form role="form" ng-submit="vm.registerWorker()" role="form">
+
+
+
                                 <fieldset>
 
                                     <div class="form-group" ng-class="{ 'has-error': form.resident_name.$dirty && form.resident_name.$error.required }">
@@ -251,7 +238,8 @@
                                         <input class="form-control" placeholder="Worker native address" type="text" name="worker_native_add" id="worker_native_add" ng-model="vm.worker.worker_native_add" required >
                                         <span ng-show="form.worker_native_add.$dirty && form.worker_native_add.$error.required" class="help-block">Worker native address is required</span>
                                     </div>
-                                    <!-- <div class="form-group" ng-class="{ 'has-error': form.worker_photo.$dirty && form.worker_photo.$error.required }">
+
+                                        <!-- <div class="form-group" ng-class="{ 'has-error': form.worker_photo.$dirty && form.worker_photo.$error.required }">
                                         <input class="form-control" placeholder="Worker Photo" type="file" name="worker_photo" id="worker_photo" ng-model="vm.worker.worker_photo" required >
                                         <span ng-show="form.worker_photo.$dirty && form.worker_photo.$error.required" class="help-block">Worker photo is required</span>
                                     </div> -->
@@ -261,11 +249,41 @@
 
                                     </div>
 
+
                                 </fieldset>
-                            </form>
+
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                Worker Photo
+                                <input class="form-group-lg" name="fileToUpload" id="photo"   type="file" />
+                            </div>
+                            <div class="form-group">
+                                Voter Card
+                                <input class="form-group-lg" name="fileToUpload"  id="vc"   type="file" />
+                            </div>
+                            <div class="form-group">
+                                Adhar Card
+                                <input class="form-group-lg" name="fileToUpload" id="ac"   type="file" />
+                            </div>
+                            <div class="form-group">
+                                Driving Licence
+                                <input class="form-group-lg" name="fileToUpload" id="dl"   type="file" />
+                            </div>
+                            <div class="form-group">
+                                Police Verification
+                                <input class="form-group-lg" name="fileToUpload"  id="pv"   type="file" />
+                            </div>
+                            <div class="form-group">
+                                PAN Card
+                                <input class="form-group-lg" name="fileToUpload"  id="pc"   type="file" />
+                            </div>
+
                         </div>
 
+                        </form>
                     </div>
+
                     <!-- /.panel-body -->
                 </div>
                 <!-- /.panel -->
